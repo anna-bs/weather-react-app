@@ -49,6 +49,16 @@ export default function Weather() {
           </li>
         </ul>
       ) : null}
+      <footer>
+        <a
+          href="https://github.com/anna-bs/weather-react-app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Open-source code
+        </a>
+        , by Anna Bilousova
+      </footer>
     </div>
   );
 }
