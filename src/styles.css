@@ -1,0 +1,22 @@
+.Weather {
+  font-family: arial, sans-serif;
+  border: 1px solid #dadde1;
+  margin: 20px auto;
+  padding: 16px;
+  max-width: 800px;
+  border-radius: 4px;
+  color: rgb(135, 135, 135);
+}
+.Weather form {
+  margin-bottom: 20px;
+}
+.currentDate {
+  list-style: none;
+}
+.currentTemp {
+  font-size: 54px;
+  color: black;
+}
+.weatherDetails {
+  list-style: none;
+}

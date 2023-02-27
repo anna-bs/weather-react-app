@@ -29,36 +29,68 @@ export default function Weather() {
 
   return (
     <div className="Weather">
-      <form onSubmit={handleSearch}>
-        <input
-          type="search"
-          placeholder="Enter a city..."
-          onChange={updateCity}
-        />
-        <input type="submit" value="Seach" />
-      </form>
-      {weather ? (
-        <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C </li>
-          <li>Description: {weather.description} </li>
-          <li>Humidity: {Math.round(weather.humidity)}%</li>
-          <li>Wind: {Math.round(weather.wind)}km/h </li>
-          <li>
-            {" "}
-            <img src={weather.icon} alt="icon" />{" "}
-          </li>
-        </ul>
-      ) : null}
-      <footer>
-        <a
-          href="https://github.com/anna-bs/weather-react-app"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Open-source code
-        </a>
-        , by Anna Bilousova
-      </footer>
+      <div className="container">
+        <form onSubmit={handleSearch}>
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city..."
+                className="form-control"
+                onChange={updateCity}
+              />
+            </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Seach"
+                className="btn btn-primary w-100"
+              />
+            </div>
+          </div>
+        </form>
+        {weather ? (
+          <ul className="weatherDetails">
+            <li>Temperature: {Math.round(weather.temperature)}°C </li>
+            <li>Description: {weather.description} </li>
+            <li>Humidity: {Math.round(weather.humidity)}%</li>
+            <li>Wind: {Math.round(weather.wind)}km/h </li>
+            <li>
+              {" "}
+              <img src={weather.icon} alt="icon" />{" "}
+            </li>
+          </ul>
+        ) : null}
+        <div className="row justify-content-center text-center">
+          <div className="col-4 mb-5">
+            <div className="city-date border-bottom">
+              <h1 className="mb-0">
+                <small className="text-muted">Berlin</small>
+              </h1>
+              <ul className="date mb-2">
+                <small className="text-muted currentDate">
+                  <li>11:27</li>
+                  <li>Thursday</li>
+                  <li>30 Jun 22</li>
+                </small>
+              </ul>
+            </div>
+            <h2 className="mb-0">
+              <div className="d-flex justify-content-start weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
+                  alt="weather"
+                  id="icon"
+                />
+                <span className="currentTemp">23</span>°
+              </div>
+            </h2>
+            <span className="d-flex justify-content-start units text-muted">
+              <a href="#">°C</a> |<a href="#">°F</a>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
